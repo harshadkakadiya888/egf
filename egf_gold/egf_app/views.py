@@ -2,7 +2,7 @@ from rest_framework import generics
 from .models import Address
 from django.shortcuts import render
 from .serializers import AddressSerializer
-
+from django.http import HttpResponse
 
 class AddressListCreateView(generics.ListCreateAPIView):
     queryset = Address.objects.all()
@@ -16,3 +16,7 @@ class AddressDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 def form_page(request):
     return render(request, "form.html")
+
+def home(request):
+    return HttpResponse("Welcome to the Address API!")
+
