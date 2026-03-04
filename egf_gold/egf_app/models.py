@@ -7,7 +7,7 @@ from django.db import models
 # Customer Address Model
 # =========================
 class Address(models.Model):
-    name = models.CharField(max_length=100)
+    name1 = models.CharField(max_length=100)
     email = models.EmailField()
     contact = models.CharField(max_length=15)
     country = models.CharField(max_length=100)
