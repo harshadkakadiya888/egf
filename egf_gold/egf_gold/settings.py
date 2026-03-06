@@ -39,7 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
      'egf_app',
+     'cloudinary_storage',
+     'cloudinary',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dctgawtmw',
+    'API_KEY': '359919353486573',
+    'API_SECRET': '**********',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [

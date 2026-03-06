@@ -14,8 +14,8 @@ class Address(models.Model):
     state = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     pincode = models.CharField(max_length=10)
-
+    image = models.ImageField(upload_to='students/', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.name1

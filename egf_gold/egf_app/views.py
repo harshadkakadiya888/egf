@@ -3,6 +3,7 @@ from .models import Address
 from django.shortcuts import render
 from .serializers import AddressSerializer
 from django.http import HttpResponse
+from rest_framework.parsers import MultiPartParser, FormParser
 
 class AddressListCreateView(generics.ListCreateAPIView):
     queryset = Address.objects.all()
@@ -20,3 +21,8 @@ def form_page(request):
 def home(request):
     return HttpResponse("Welcome to the Address API!")
 
+
+class AddressListCreateView(generics.ListCreateAPIView):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+    parser_classes = (MultiPartParser, FormParser)
