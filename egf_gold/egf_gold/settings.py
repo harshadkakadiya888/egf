@@ -44,13 +44,16 @@ INSTALLED_APPS = [
      'cloudinary',
 ]
 
+
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dctgawtmw',
-    'API_KEY': '359919353486573',
-    'API_SECRET': '*********************************',
+    'CLOUD_NAME': os.environ.get("dctgawtmw"),
+    'API_KEY': os.environ.get("332811577391887"),
+    'API_SECRET': os.environ.get("*********************************"),
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
