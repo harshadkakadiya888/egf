@@ -44,15 +44,15 @@ INSTALLED_APPS = [
      'cloudinary',
 ]
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get("dctgawtmw"),
-    'API_KEY': os.environ.get("332811577391887"),
-    'API_SECRET': os.environ.get("*********************************"),
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
+cloudinary.config(
+    cloud_name="dctgawtmw",
+    api_key="332811577391887",
+    api_secret="fM20-NRyU5-nn93M_QODYU3v584"
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
@@ -140,3 +140,6 @@ STATIC_URL = 'static/'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# Cloudinary Storage Configuration
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
